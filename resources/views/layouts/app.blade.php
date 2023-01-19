@@ -18,13 +18,13 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">Anasayfa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home.about') }}">Hakkımızda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home.contact') }}">İletişim</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home.pricing') }}">Fiyatlandırma</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home.faq') }}">S.S.S.</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home.blog') }}">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home.portfolio') }}">Portfolyo</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Route::is('home.index') ? 'active text-warning' : '' }}" href="{{ route('home.index') }}">Anasayfa</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Route::is('home.about') ? 'active text-warning' : '' }}" href="{{ route('home.about') }}">Hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Route::is('home.contact') ? 'active text-warning' : '' }}" href="{{ route('home.contact') }}">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Route::is('home.pricing') ? 'active text-warning' : '' }}" href="{{ route('home.pricing') }}">Fiyatlandırma</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Route::is('home.faq') ? 'active text-warning' : '' }}" href="{{ route('home.faq') }}">S.S.S.</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Route::is('home.blog') ? 'active text-warning' : '' }}" href="{{ route('home.blog') }}">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Route::is('home.portfolio') ? 'active text-warning' : '' }}" href="{{ route('home.portfolio') }}">Portfolyo</a></li>
                 </ul>
             </div>
         </div>
