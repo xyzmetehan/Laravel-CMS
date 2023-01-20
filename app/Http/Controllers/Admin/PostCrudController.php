@@ -21,7 +21,7 @@ class PostCrudController extends CrudController
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
-     * 
+     *
      * @return void
      */
     public function setup()
@@ -33,30 +33,30 @@ class PostCrudController extends CrudController
 
     /**
      * Define what happens when the List operation is loaded.
-     * 
+     *
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
      * @return void
      */
     protected function setupListOperation()
     {
-        CRUD::column('title');
-        CRUD::column('slug');
-        CRUD::column('content');
-        CRUD::column('user_id');
-        CRUD::column('category_id');
-        CRUD::column('status');
-        CRUD::column('featured_image');
+        CRUD::column('title')->label('Başlık');
+        CRUD::column('slug')->label('SEO URL');
+        CRUD::column('content')->label('İçerik');
+        CRUD::column('user_id')->label('Yazar');
+        CRUD::column('category_id')->label('Kategori');
+        CRUD::column('status')->label('Durum');
+        CRUD::column('featured_image')->label('Resim');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
+         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
          */
     }
 
     /**
      * Define what happens when the Create operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-create
      * @return void
      */
@@ -64,24 +64,24 @@ class PostCrudController extends CrudController
     {
         CRUD::setValidation(PostRequest::class);
 
-        CRUD::field('title');
-        CRUD::field('slug');
-        CRUD::field('content');
-        CRUD::field('user_id');
-        CRUD::field('category_id');
-        CRUD::field('status');
-        CRUD::field('featured_image');
+        CRUD::field('title')->label('Başlık');
+        CRUD::field('slug')->label('SEO URL');
+        CRUD::field('content')->label('İçerik');
+        CRUD::field('user_id')->label('Yazar');
+        CRUD::field('category_id')->label('Kategori');
+        CRUD::field('status')->label('Durum');
+        CRUD::field('featured_image')->label('Resim')->type('upload')->upload('uploads');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
+         * - CRUD::addField(['name' => 'price', 'type' => 'number']));
          */
     }
 
     /**
      * Define what happens when the Update operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-update
      * @return void
      */
