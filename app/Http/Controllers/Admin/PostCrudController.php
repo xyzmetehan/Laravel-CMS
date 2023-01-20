@@ -28,7 +28,7 @@ class PostCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Post::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/post');
-        CRUD::setEntityNameStrings('post', 'posts');
+        CRUD::setEntityNameStrings('İçerik', 'İçerikler');
     }
 
     /**
@@ -70,7 +70,8 @@ class PostCrudController extends CrudController
         CRUD::field('user_id')->label('Yazar');
         CRUD::field('category_id')->label('Kategori');
         CRUD::field('status')->label('Durum');
-        CRUD::field('featured_image')->label('Resim')->type('upload')->upload('uploads');
+        CRUD::field('featured_image')->label('Resim')
+            ->type('upload')->disk('uploads')->tab('Resim Yönetimi');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

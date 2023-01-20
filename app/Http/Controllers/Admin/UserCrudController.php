@@ -18,12 +18,12 @@ class UserCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\User::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/user');
-        CRUD::setEntityNameStrings('user', 'users');
+        CRUD::setEntityNameStrings('Kullanıcı', 'Kullanıcılar');
     }
 
     protected function setupListOperation()
     {
-        CRUD::column('name')->label('Ad');
+        CRUD::column('name')->label('Ad/Soyad');
         CRUD::column('email')->label('Email Adresi');
         CRUD::column('password')->label('Şifre');
 
@@ -33,8 +33,8 @@ class UserCrudController extends CrudController
     {
         CRUD::setValidation(UserRequest::class);
 
-        CRUD::field('name')->label('Ad');
-        CRUD::field('email')->label('Mail Adresi');
+        CRUD::field('name')->label('Ad/Soyad');
+        CRUD::field('email')->label('Email Adresi');
         CRUD::field('password')->label('Şifre');
 
     }
